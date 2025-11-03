@@ -1,10 +1,11 @@
-from flask import Flask, send_file,jsonify
+
+# A very simple Flask Hello World app for you to get started with...
+
+from flask import Flask,render_template
 
 app = Flask(__name__)
 
-@app.route('/download')
-def download_file():
-    return jsonify({"name":"devesh pandey bhaiya"})
-if __name__ == '__main__':
-    app.run(debug=True, port=os.getenv("PORT", default=8080))
+@app.route('/')
+def hello_world():
+    return render_template("Bvin.html")
 
